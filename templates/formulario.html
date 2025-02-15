@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética Cecilia - Turnos</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='estetica.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+        h1 {
+            color: #ff4081;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Estética Cecilia</h1>
+        <form action="/agendar" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+            
+            <label for="contacto">Contacto:</label>
+            <input type="text" id="contacto" name="contacto" required><br>
+            
+            <label for="profesional">Profesional:</label>
+            <select id="profesional" name="profesional">
+                <option value="Cecilia">Cecilia</option>
+                <option value="Mariana">Mariana</option>
+            </select><br>
+            
+            <label for="dia">Día:</label>
+            <input type="date" id="dia" name="dia" required><br>
+            
+            <label for="horario">Horario:</label>
+            <input type="time" id="horario" name="horario" required><br>
+            
+            <label for="tratamiento">Tratamiento:</label>
+            <select id="tratamiento" name="tratamiento">
+                <option value="Masajes capilares">Masajes capilares</option>
+                <option value="Masajes relajantes">Masajes relajantes</option>
+                <option value="Punta de diamante">Punta de diamante</option>
+                <option value="Botas">Botas</option>
+                <option value="Radiofrecuencia">Radiofrecuencia</option>
+            </select><br>
+            
+            <label for="pago">Forma de pago:</label>
+            <select id="pago" name="pago">
+                <option value="Transferencia">Transferencia</option>
+                <option value="Efectivo">Efectivo</option>
+            </select><br>
+            
+            <button type="submit">Agendar tu turno</button>
+        </form>
+    </div>
+</body>
+</html>
